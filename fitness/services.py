@@ -18,7 +18,7 @@ class FitnessServices:
             'database': os.getenv('DB_NAME')
         }
 
-    # ✅ Authenticate existing user
+    
     def authenticate(self, username, password):
         con = pymysql.connect(**self.db_config)
         curs = con.cursor(pymysql.cursors.DictCursor)
@@ -34,7 +34,7 @@ class FitnessServices:
             curs.close()
             con.close()
 
-    # ✅ Create new profile
+   
     def newprofile(self, name, age, gender, height, weight, foodtype, steps_pr_day):
         con = pymysql.connect(**self.db_config)
         curs = con.cursor()
@@ -55,7 +55,6 @@ class FitnessServices:
             curs.close()
             con.close()
 
-    # ✅ Fetch all profiles
     def report(self):
         con = pymysql.connect(**self.db_config)
         curs = con.cursor(pymysql.cursors.DictCursor)
@@ -71,7 +70,7 @@ class FitnessServices:
             curs.close()
             con.close()
 
-    # ✅ Update profile details
+  
     def change(self, name, height, weight, foodtype):
         con = pymysql.connect(**self.db_config)
         curs = con.cursor()
@@ -87,7 +86,6 @@ class FitnessServices:
             curs.close()
             con.close()
 
-    # ✅ Delete a user profile
     def delete1(self, name):
         con = pymysql.connect(**self.db_config)
         curs = con.cursor()
@@ -103,7 +101,6 @@ class FitnessServices:
             curs.close()
             con.close()
 
-    # ✅ Search for a specific user
     def search_user(self, name):
         con = pymysql.connect(**self.db_config)
         curs = con.cursor(pymysql.cursors.DictCursor)
