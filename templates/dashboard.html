@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fitness Consultant Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f2f6f9;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    
+    .banner {
+  width: 100%;
+  height: 500px; /* Adjust height as needed */
+  object-fit: cover;
+  border-radius: 20px 20px 20px 20px;
+  margin-top: 20px;
+  display: block;
+  background-position: center;
+  background-size: cover;
+}
+
+
+    .dashboard-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .dashboard-title {
+      text-align: center;
+      margin-bottom: 3px;
+      font-size: 2rem;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .action-card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .action-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .action-card a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .btn-custom {
+      width: 100%;
+      padding: 15px;
+      font-size: 1rem;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
+    .ai-section {
+      margin-top: 40px;
+    }
+
+    .logout-btn {
+      margin-top: 20px;
+    }
+    
+  </style>
+</head>
+<body>
+
+  
+  <div class="dashboard-container">
+    <img src="/static/fitnessbg.jpg" alt="Banner" class="banner">
+
+    <h2 class="dashboard-title">Welcome {{user}}, Fitness Consultant!</h2>
+
+    <!-- Main Action Buttons -->
+    <div class="row g-4">
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="action-card bg-primary">
+          <a href="/addprofile/"><div class="btn btn-custom btn-light text-dark">Add New Profile</div></a>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="action-card bg-warning">
+          <a href="/changeprofile/"><div class="btn btn-custom btn-light text-dark">Modify Profile</div></a>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="action-card bg-danger">
+          <a href="/deletepage/"><div class="btn btn-custom btn-light text-dark">Delete Profile</div></a>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="action-card bg-success">
+          <a href="/search/"><div class="btn btn-custom btn-light text-dark">Search Profile</div></a>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="action-card bg-info">
+          <a href="/viewreport/"><div class="btn btn-custom btn-light text-dark">View Report</div></a>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="action-card bg-secondary">
+          <a href="/generate_ai_advice/"><div class="btn btn-custom btn-light text-dark">Health Tips</div></a>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- AI Recommendation Section -->
+    <div class="ai-section text-center">
+      <h4 class="mt-5 mb-3 text-primary">Need a Recommendation?</h4>
+      <a href="/generate_ai_advice/" class="btn btn-outline-primary btn-lg">Generate AI-based Health Advice</a>
+    </div>
+
+    <!-- Logout -->
+    <div class="text-center logout-btn">
+      <a href="/logout/" class="btn btn-outline-danger">Logout</a>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Add New Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f2f6f9;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-title {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 10px;
+    }
+
+    .form-label {
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="form-container">
+      <h2 class="form-title">Add New Profile</h2>
+
+      <form method="POST" action="/newprofile/">
+        <!-- Name -->
+         {%csrf_token %}
+
+
+         {% if error %}
+  <div class="alert alert-danger">{{ error }}</div>
+{% endif %}
+
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter full name" required>
+        </div>
+
+        <!-- Age -->
+        <div class="mb-3">
+          <label for="age" class="form-label">Age</label>
+          <input type="number" class="form-control" id="age" name="age" min="0" placeholder="Enter age" required>
+        </div>
+
+        <!-- Gender -->
+        <div class="mb-3">
+          <label for="gender" class="form-label">Gender</label>
+          <input type="text" class="form-control" id="gender" name="gender" placeholder="Enter gender" required>
+        </div>
+
+        <!-- Height -->
+        <div class="mb-3">
+          <label for="height" class="form-label">Height (cm)</label>
+          <input type="number" class="form-control" id="height" name="height" min="0" placeholder="Enter height in cm" required>
+        </div>
+
+        <!-- Weight -->
+        <div class="mb-3">
+          <label for="weight" class="form-label">Weight (kg)</label>
+          <input type="number" class="form-control" id="weight" name="weight" min="0" placeholder="Enter weight in kg" required>
+        </div>
+
+        <!-- Food Type -->
+        <div class="mb-3">
+          <label for="food_type" class="form-label">Food Type</label>
+          <input type="text" class="form-control" id="food_type" name="food_type" placeholder="Enter food preference" required>
+        </div>
+
+        <!-- Steps Per Day -->
+        <div class="mb-4">
+          <label for="steps" class="form-label">Steps Per Day</label>
+          <input type="number" class="form-control" id="steps" name="steps" min="0" placeholder="Enter average steps per day" required>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary btn-submit">Submit Profile</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+
+  </script>
+</body>
+</html>
